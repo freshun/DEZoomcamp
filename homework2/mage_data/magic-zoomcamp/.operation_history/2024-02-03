@@ -1,0 +1,6 @@
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "graceful_elixir"}, "timestamp": 1706926059, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "natural_sky"}, "timestamp": 1706926363, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "shining_echo"}, "timestamp": 1706933806, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "utopian_alchemist"}, "timestamp": 1706940480, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "gcs_to_bigquery_copy"}, "timestamp": 1706995700, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "data_to_gcs_partitioned_copy"}, "timestamp": 1706995808, "user": null}
