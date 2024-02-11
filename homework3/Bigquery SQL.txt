@@ -1,0 +1,23 @@
+CREATE OR REPLACE EXTERNAL TABLE `external_green_taxi_data.green_data_set`
+OPTIONS (
+  format = 'Parquet',
+  uris = ['gs://fe-magezoomcamp-6942069/green_taxi_homework/green_tripdata_2022-*.parquet']
+);
+
+CREATE OR REPLACE TABLE green_taxi_data.green_data_set_non_partitoned AS
+SELECT * FROM external_green_taxi_data.green_data_set;
+
+select distinct(PULocationID) from `green_taxi_data.green_data_set_non_partitoned`;
+
+select distinct PULocationID from `external_green_taxi_data.green_data_set`;
+
+select count(*) from`green_taxi_data.green_data_set_non_partitoned`
+where fare_amount = 0;
+
+select distinct PULocationID from `green_taxi_data.green_data_set_partitioned`
+where lpep_pickup_datetime >= '2022-06-01' and lpep_pickup_datetime <= '2022-06-30';
+
+CREATE OR REPLACE TABLE green_taxi_data.green_data_set_partitioned 
+partition by Date(lpep_pickup_datetime) AS
+select * from `green_taxi_data.green_data_set_non_partitoned`;
+
